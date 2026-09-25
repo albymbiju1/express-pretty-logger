@@ -192,20 +192,6 @@ const cleanData = sanitizePayload(userProfile, {
 
 ---
 
-## 🧪 Testing
-
-```bash
-npm test
-```
-
-To run the interactive demonstration:
-
-```bash
-npm run example
-```
-
----
-
 ## 📄 License
 
 [MIT](LICENSE)
