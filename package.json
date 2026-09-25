@@ -52,10 +52,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/albymbiju/express-pretty-logger.git"
+    "url": "git+https://github.com/albymbiju1/express-pretty-logger.git"
   },
   "bugs": {
-    "url": "https://github.com/albymbiju/express-pretty-logger/issues"
+    "url": "https://github.com/albymbiju1/express-pretty-logger/issues"
   },
-  "homepage": "https://github.com/albymbiju/express-pretty-logger#readme"
+  "homepage": "https://github.com/albymbiju1/express-pretty-logger#readme"
 }
