@@ -1,0 +1,61 @@
+{
+  "name": "@albymbiju/express-pretty-logger",
+  "version": "1.0.1",
+  "description": "A clean, beautiful, and secure terminal logger middleware for Express.js with automatic sensitive data masking, response interception, and ANSI styling.",
+  "main": "src/index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./src/index.js",
+      "import": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "example": "node example/demo.js"
+  },
+  "keywords": [
+    "express",
+    "logger",
+    "logging",
+    "middleware",
+    "pretty-logger",
+    "terminal",
+    "ansi",
+    "security",
+    "sanitizer",
+    "mask-sensitive",
+    "jwt",
+    "http",
+    "debug"
+  ],
+  "author": "Alby M Biju <albymbiju2002@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "express": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "express": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "src",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albymbiju/express-pretty-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/albymbiju/express-pretty-logger/issues"
+  },
+  "homepage": "https://github.com/albymbiju/express-pretty-logger#readme"
+}
