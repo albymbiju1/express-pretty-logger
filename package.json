@@ -1,6 +1,6 @@
 {
   "name": "@albymbiju/express-pretty-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A clean, beautiful, and secure terminal logger middleware for Express.js with automatic sensitive data masking, response interception, and ANSI styling.",
   "main": "src/index.js",
   "types": "index.d.ts",
