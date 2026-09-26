@@ -11,7 +11,7 @@ Designed with rich ANSI box borders, color badges for HTTP methods and status co
 - 🌈 **Beautiful Terminal Output**: Clean box borders, badges for HTTP methods and response statuses, and color-coded execution times.
 - 🔒 **Zero-Leak Security by Default**: Automatically hides passwords, credit card numbers, CVVs, PINs, OTPs, API keys, cookies, and JWT tokens (e.g. `[TOKEN HIDDEN]`).
 - 📦 **Response Interception**: Safely captures JSON & string responses from `res.json()` and `res.send()` without modifying payloads.
-- ⚡ **Payload Truncation**: Prevents terminal flooding from large payloads (`maxPayloadLength`).
+- ⚡ **Optional Payload Truncation**: Easily cap very large payloads if needed (`maxPayloadLength`). Full response is preserved by default.
 - 🛠️ **Fully Configurable**: Toggle request body, response body, query parameters, route parameters, headers, or ignore specific paths (like health checks).
 - 🪶 **Zero Dependencies**: Pure, lightweight Node.js with built-in ANSI styling and NO_COLOR support.
 - 📘 **TypeScript Ready**: Includes comprehensive `index.d.ts` type definitions.
@@ -116,7 +116,7 @@ app.use(
     query: true,               // Log URL query params (default: true)
     params: false,             // Log req.params route parameters (default: false)
     headers: ['authorization'],// Log specific headers or boolean (default: false)
-    maxPayloadLength: 5000,    // Truncate payloads longer than N chars (default: 5000)
+    maxPayloadLength: Infinity,// Truncate payloads longer than N chars (default: Infinity / full payload)
     timestamp: true,           // Show timestamp or custom generator (default: true)
     colors: true,              // Enable ANSI colors (respects NO_COLOR env var)
     ignorePaths: ['/health', '/metrics'], // Skip logging for specific routes
@@ -138,7 +138,7 @@ app.use(
 | `params` | `boolean` | `false` | Log route parameters (`req.params`). |
 | `headers` | `boolean \| string[]` | `false` | Log all headers or a list of specific header names. |
 | `timestamp` | `boolean \| (() => string)` | `true` | Include timestamp in request banner. |
-| `maxPayloadLength` | `number` | `5000` | Character threshold before payload is truncated. |
+| `maxPayloadLength` | `number \| false` | `Infinity` | Character threshold before payload is truncated (set to a number to cap, or `Infinity`/`false` for full payload). |
 | `colors` | `boolean \| object` | `true` | Enable ANSI colors. Automatically disabled if `NO_COLOR` env is set. |
 | `ignorePaths` | `(string \| RegExp)[] \| ((req) => boolean)` | `[]` | Routes to ignore. |
 | `sensitiveKeys` | `(string \| RegExp)[]` | `[]` | Custom field names to mask with `sensitiveMask`. |

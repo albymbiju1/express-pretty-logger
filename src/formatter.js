@@ -4,10 +4,10 @@
  * 
  * @param {any} obj - Object or primitive to format
  * @param {Record<string, string>} colors
- * @param {number} [maxPayloadLength=5000]
+ * @param {number|false} [maxPayloadLength=Infinity]
  * @returns {string|null}
  */
-const formatPrettyObject = (obj, colors, maxPayloadLength = 5000) => {
+const formatPrettyObject = (obj, colors, maxPayloadLength = Infinity) => {
   if (obj === null || obj === undefined) return null;
   if (typeof obj === 'object' && Object.keys(obj).length === 0) return null;
 
@@ -26,7 +26,12 @@ const formatPrettyObject = (obj, colors, maxPayloadLength = 5000) => {
 
   // Truncate if maximum payload length exceeded
   let isTruncated = false;
-  if (maxPayloadLength > 0 && formatted.length > maxPayloadLength) {
+  if (
+    typeof maxPayloadLength === 'number' &&
+    maxPayloadLength > 0 &&
+    Number.isFinite(maxPayloadLength) &&
+    formatted.length > maxPayloadLength
+  ) {
     formatted = formatted.slice(0, maxPayloadLength);
     isTruncated = true;
   }

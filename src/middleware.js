@@ -13,7 +13,7 @@ const { formatPrettyObject, formatTimestamp } = require('./formatter');
  * @param {boolean} [options.params=false] - Log route parameters (req.params)
  * @param {boolean|string[]} [options.headers=false] - Log request headers (or list of specific headers)
  * @param {boolean|(() => string)} [options.timestamp=true] - Show timestamp or custom generator
- * @param {number} [options.maxPayloadLength=5000] - Max characters before payload truncation
+ * @param {number|false} [options.maxPayloadLength=Infinity] - Max characters before payload truncation (default: Infinity / no truncation)
  * @param {boolean|object} [options.colors=true] - Enable ANSI colors or custom color theme
  * @param {Array<string|RegExp>} [options.sensitiveKeys=[]] - Additional sensitive keys to mask with ***HIDDEN***
  * @param {Array<string|RegExp>} [options.tokenKeys=[]] - Additional token keys to mask with [TOKEN HIDDEN]
@@ -32,7 +32,7 @@ const createPrettyLogger = (options = {}) => {
     params = false,
     headers = false,
     timestamp = true,
-    maxPayloadLength = 5000,
+    maxPayloadLength = Infinity,
     colors: colorsOption = true,
     customColors = {},
     sensitiveKeys = [],

@@ -39,9 +39,10 @@ export interface LoggerOptions {
 
   /**
    * Maximum character length for payload stringification before truncating.
-   * @default 5000
+   * Set to a number to truncate payloads longer than N characters, or Infinity/false to show full responses.
+   * @default Infinity
    */
-  maxPayloadLength?: number;
+  maxPayloadLength?: number | false;
 
   /**
    * Enable ANSI colors or pass a custom color mapping. Set to false to disable styling.
